@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Sample Showcase — Grand Canyon Geological Data</title>
+  <meta name="description" content="Interactive showcase of 3D terrain models, drill hole designs, geological maps, and presentation figures using USGS Grand Canyon data.">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+  <!-- Three.js & OrbitControls -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+
+  <!-- Leaflet -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+
+<body>
+<div id="app">
+
+  <!-- ===== HEADER ===== -->
+  <header class="header">
+    <div class="header-brand">
+      <div class="logo">3D</div>
+      <div>
+        <h1>3D Sample Showcase</h1>
+        <div class="subtitle">Grand Canyon · USGS Open Data</div>
+      </div>
+    </div>
+
+    <nav>
+      <ul class="tab-nav" id="tabNav">
+        <li><button class="tab-btn active" data-tab="terrain">
+          3D Terrain
+        </button></li>
+        <li><button class="tab-btn" data-tab="drillhole">
+          Drill Holes
+        </button></li>
+        <li><button class="tab-btn" data-tab="map">
+          Geological Map
+        </button></li>
+        <li><button class="tab-btn" data-tab="figures">
+          Figures
+        </button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main class="main-content">
+
+    <!-- TAB 1: 3D Terrain -->
+    <section class="tab-panel active" id="panel-terrain">
+      <div class="panel-header">
+        <div>
+          <div class="panel-title">3D Terrain — Grand Canyon, Arizona</div>
+          <div class="panel-subtitle">Real SRTM elevation data · South Rim to Inner Gorge — orbit to explore</div>
+        </div>
+        <div class="panel-controls">
+          <button class="ctrl-btn active" id="btnSolid" onclick="terrainToggle('solid')">Solid</button>
+          <button class="ctrl-btn" id="btnWire" onclick="terrainToggle('wire')">Wireframe</button>
+          <button class="ctrl-btn" id="btnBoth" onclick="terrainToggle('both')">Both</button>
+        </div>
+      </div>
+      <div class="canvas-wrap" id="terrainCanvas">
+        <div class="spinner-wrap" id="terrainSpinner"><div class="spinner"></div></div>
+        <div class="info-overlay">
+          <h4>Terrain Info</h4>
+          <p>Real SRTM data · Grand Canyon, Arizona · Loading...</p>
+        </div>
+        <div class="legend" id="terrainLegend">
+          <h4>Elevation (m)</h4>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 2: Drill Holes — VERTICAL SIDEBAR LAYOUT -->
+    <section class="tab-panel vertical-layout" id="panel-drillhole">
+      <div class="panel-sidebar">
+        <div style="flex-shrink:0">
+          <div class="panel-title">Drill Holes</div>
+          <div class="panel-subtitle" style="margin-bottom:10px">Grand Canyon Stratigraphy<br>USGS · Beus &amp; Morales (2003)</div>
+          <div class="panel-controls" style="margin-bottom:12px">
+            <button class="ctrl-btn active" id="btnLabelsOn" onclick="toggleLabels(true)">Labels On</button>
+            <button class="ctrl-btn" id="btnLabelsOff" onclick="toggleLabels(false)">Labels Off</button>
+          </div>
+        </div>
+        <div class="sidebar-stat">
+          <h4>Summary</h4>
+          <div class="stat-row"><span class="label">Boreholes</span><span class="value">6</span></div>
+          <div class="stat-row"><span class="label">Total Depth</span><span class="value">7,300 m</span></div>
+          <div class="stat-row"><span class="label">Formations</span><span class="value">14</span></div>
+          <div class="stat-row"><span class="label">Oldest Rock</span><span class="value">1.75 Ga</span></div>
+          <div class="stat-row"><span class="label">Age Span</span><span class="value">270 Ma – 1.75 Ga</span></div>
+        </div>
+        <div class="sidebar-legend" id="drillLegend">
+          <h4>Stratigraphy</h4>
+        </div>
+      </div>
+      <div class="panel-main">
+        <div class="canvas-wrap" id="drillCanvas">
+          <div class="spinner-wrap" id="drillSpinner"><div class="spinner"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 3: Geological Map — VERTICAL SIDEBAR LAYOUT -->
+    <section class="tab-panel vertical-layout" id="panel-map">
+      <div class="panel-sidebar">
+        <div style="flex-shrink:0">
+          <div class="panel-title">Geological Map</div>
+          <div class="panel-subtitle" style="margin-bottom:10px">Grand Canyon National Park<br>USGS Map I-2688 · Billingsley et al.</div>
+        </div>
+        <div class="sidebar-stat">
+          <h4>Map Layers</h4>
+          <div class="stat-row"><span class="label">Formations</span><span class="value">6</span></div>
+          <div class="stat-row"><span class="label">Faults</span><span class="value">3</span></div>
+          <div class="stat-row"><span class="label">Sample Points</span><span class="value">11</span></div>
+          <div class="stat-row"><span class="label">Landmarks</span><span class="value">8</span></div>
+        </div>
+        <div class="sidebar-legend">
+          <h4>Sample Types</h4>
+          <div class="legend-item"><div class="legend-color" style="background:#f59e0b"></div><span class="legend-label">Fossil</span></div>
+          <div class="legend-item"><div class="legend-color" style="background:#ef4444"></div><span class="legend-label">Rock Sample</span></div>
+          <div class="legend-item"><div class="legend-color" style="background:#2563eb"></div><span class="legend-label">Drill Core</span></div>
+          <div class="legend-item"><div class="legend-color" style="background:#0891b2"></div><span class="legend-label">Water Sample</span></div>
+        </div>
+      </div>
+      <div class="panel-main">
+        <div id="map-container"></div>
+      </div>
+    </section>
+
+    <!-- TAB 4: Presentation Figures -->
+    <section class="tab-panel" id="panel-figures">
+      <div class="panel-header">
+        <div>
+          <div class="panel-title">Presentation Figures — Published Data</div>
+          <div class="panel-subtitle">USGS data · Beus &amp; Morales (2003) · McKee (1938) · Billingsley et al. (2000)</div>
+        </div>
+      </div>
+      <div class="figures-grid">
+        <div class="figure-card">
+          <h3>Rim-to-River Profile</h3>
+          <div class="fig-subtitle">Bright Angel Trail — USGS elevations</div>
+          <div class="chart-container">
+            <canvas id="chartCrossSection"></canvas>
+          </div>
+        </div>
+        <div class="figure-card">
+          <h3>Mineral Composition</h3>
+          <div class="fig-subtitle">Kaibab Limestone (McKee 1938)</div>
+          <div class="chart-container">
+            <canvas id="chartMineral"></canvas>
+          </div>
+        </div>
+        <div class="figure-card">
+          <h3>Formation Thicknesses</h3>
+          <div class="fig-subtitle">USGS measured sections (Beus &amp; Morales 2003)</div>
+          <div class="chart-container">
+            <canvas id="chartGrade"></canvas>
+          </div>
+        </div>
+        <div class="figure-card">
+          <h3>Formation Ages</h3>
+          <div class="fig-subtitle">1.75 billion years of Earth history</div>
+          <div class="chart-container">
+            <canvas id="chartRockType"></canvas>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- Application Scripts -->
+<script src="terrain.js"></script>
+<script src="drillhole.js"></script>
+<script src="map.js"></script>
+<script src="figures.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

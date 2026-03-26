@@ -1,0 +1,215 @@
+{
+  "metadata": {
+    "title": "Interactive 3D Geological Framework",
+    "subtitle": "Grand Canyon · USGS Open Data",
+    "region": "Grand Canyon, Arizona",
+    "source": "USGS · Beus & Morales (2003) · McKee (1938) · Billingsley et al. (2000)"
+  },
+  "terrain": {
+    "provider": "aws-terrarium",
+    "lat": 36.08,
+    "lon": -112.12,
+    "zoom": 12,
+    "gridSize": 128,
+    "scale": 15000,
+    "exaggeration": 1.5
+  },
+  "stratigraphy": {
+    "KAIBAB":   { "name": "Kaibab Limestone",       "color": "0xc9a95f", "age": "Permian (270 Ma)" },
+    "TOROWEAP": { "name": "Toroweap Formation",     "color": "0xa99a7a", "age": "Permian (273 Ma)" },
+    "COCONINO": { "name": "Coconino Sandstone",     "color": "0xdfc99a", "age": "Permian (275 Ma)" },
+    "HERMIT":   { "name": "Hermit Formation",       "color": "0xba5a3a", "age": "Permian (280 Ma)" },
+    "ESPLANADE":{ "name": "Esplanade Sandstone",    "color": "0xca6a4a", "age": "Pennsylvanian" },
+    "WESCOGAME":{ "name": "Wescogame Formation",    "color": "0xaa5a3a", "age": "Pennsylvanian" },
+    "MANAKACHA":{ "name": "Manakacha Formation",    "color": "0xba7a5a", "age": "Pennsylvanian" },
+    "WATAHOMIGI":{"name": "Watahomigi Formation",   "color": "0x9a6a4a", "age": "Pennsylvanian" },
+    "REDWALL":  { "name": "Redwall Limestone",      "color": "0xa0a0b0", "age": "Mississippian (340 Ma)" },
+    "TEMPLE":   { "name": "Temple Butte Fm.",       "color": "0x8a7a6a", "age": "Devonian (385 Ma)" },
+    "MUAV":     { "name": "Muav Limestone",         "color": "0x90a090", "age": "Cambrian (505 Ma)" },
+    "BRIGHT":   { "name": "Bright Angel Shale",     "color": "0x608050", "age": "Cambrian (510 Ma)" },
+    "TAPEATS":  { "name": "Tapeats Sandstone",      "color": "0x8a6a4a", "age": "Cambrian (508 Ma)" },
+    "VISHNU":   { "name": "Vishnu Basement Rocks",  "color": "0x3a3a3a", "age": "Precambrian (1750 Ma)" }
+  },
+  "boreholes": [
+    {
+      "id": "BH-01", "name": "Bright Angel Trailhead",
+      "x": -90, "z": -120, "elevation": 210, "collar": 2130,
+      "intervals": [
+        { "depthTo": 20,  "lithoId": "KAIBAB" },
+        { "depthTo": 35,  "lithoId": "TOROWEAP" },
+        { "depthTo": 55,  "lithoId": "COCONINO" },
+        { "depthTo": 62,  "lithoId": "HERMIT" },
+        { "depthTo": 80,  "lithoId": "ESPLANADE" },
+        { "depthTo": 91,  "lithoId": "WESCOGAME" },
+        { "depthTo": 103, "lithoId": "MANAKACHA" },
+        { "depthTo": 114, "lithoId": "WATAHOMIGI" },
+        { "depthTo": 145, "lithoId": "REDWALL" },
+        { "depthTo": 151, "lithoId": "TEMPLE" },
+        { "depthTo": 178, "lithoId": "MUAV" },
+        { "depthTo": 198, "lithoId": "BRIGHT" },
+        { "depthTo": 204, "lithoId": "TAPEATS" },
+        { "depthTo": 250, "lithoId": "VISHNU" }
+      ]
+    },
+    {
+      "id": "BH-02", "name": "Indian Garden Core",
+      "x": -30, "z": -40, "elevation": 160, "collar": 1680,
+      "intervals": [
+        { "depthTo": 15,  "lithoId": "ESPLANADE" },
+        { "depthTo": 26,  "lithoId": "WESCOGAME" },
+        { "depthTo": 38,  "lithoId": "MANAKACHA" },
+        { "depthTo": 49,  "lithoId": "WATAHOMIGI" },
+        { "depthTo": 80,  "lithoId": "REDWALL" },
+        { "depthTo": 86,  "lithoId": "TEMPLE" },
+        { "depthTo": 113, "lithoId": "MUAV" },
+        { "depthTo": 133, "lithoId": "BRIGHT" },
+        { "depthTo": 139, "lithoId": "TAPEATS" },
+        { "depthTo": 180, "lithoId": "VISHNU" }
+      ]
+    },
+    {
+      "id": "BH-03", "name": "Phantom Ranch Outcrop",
+      "x": 60, "z": 40, "elevation": 40, "collar": 780,
+      "intervals": [
+        { "depthTo": 80,  "lithoId": "VISHNU" }
+      ]
+    },
+    {
+      "id": "BH-04", "name": "South Kaibab Section",
+      "x": -10, "z": -100, "elevation": 220, "collar": 2200,
+      "intervals": [
+        { "depthTo": 22,  "lithoId": "KAIBAB" },
+        { "depthTo": 37,  "lithoId": "TOROWEAP" },
+        { "depthTo": 58,  "lithoId": "COCONINO" },
+        { "depthTo": 66,  "lithoId": "HERMIT" },
+        { "depthTo": 84,  "lithoId": "ESPLANADE" },
+        { "depthTo": 95,  "lithoId": "WESCOGAME" },
+        { "depthTo": 107, "lithoId": "MANAKACHA" },
+        { "depthTo": 118, "lithoId": "WATAHOMIGI" },
+        { "depthTo": 149, "lithoId": "REDWALL" },
+        { "depthTo": 155, "lithoId": "TEMPLE" },
+        { "depthTo": 182, "lithoId": "MUAV" },
+        { "depthTo": 202, "lithoId": "BRIGHT" },
+        { "depthTo": 208, "lithoId": "TAPEATS" },
+        { "depthTo": 260, "lithoId": "VISHNU" }
+      ]
+    },
+    {
+      "id": "BH-05", "name": "Tonto Platform",
+      "x": 40, "z": -10, "elevation": 110, "collar": 1150,
+      "intervals": [
+        { "depthTo": 28,  "lithoId": "MUAV" },
+        { "depthTo": 48,  "lithoId": "BRIGHT" },
+        { "depthTo": 54,  "lithoId": "TAPEATS" },
+        { "depthTo": 100, "lithoId": "VISHNU" }
+      ]
+    },
+    {
+      "id": "BH-06", "name": "Colorado River Bed",
+      "x": 80, "z": 80, "elevation": 20, "collar": 725,
+      "intervals": [
+        { "depthTo": 60,  "lithoId": "VISHNU" }
+      ]
+    }
+  ],
+  "map": {
+    "center": [36.085, -112.115],
+    "zoom": 12,
+    "units": [
+      {
+        "name": "Kaibab Limestone",
+        "color": "#c9a95f",
+        "description": "Permian marine shelf carbonate. Forms the prominent rimed cliffs of the Grand Canyon.",
+        "bounds": [[36.14, -112.18], [36.14, -112.05], [36.11, -112.05], [36.11, -112.18]]
+      },
+      {
+        "name": "Supai Group & Hermit",
+        "color": "#ba5a3a",
+        "description": "Pennsylvanian-Permian red beds. Sandstones, siltstones forming stepped slopes.",
+        "bounds": [[36.11, -112.16], [36.11, -112.06], [36.08, -112.06], [36.08, -112.16]]
+      },
+      {
+        "name": "Redwall Limestone",
+        "color": "#a0a0b0",
+        "description": "Mississippian massive cliff-forming limestone. Often stained red by overlying Supai.",
+        "bounds": [[36.08, -112.15], [36.08, -112.07], [36.06, -112.07], [36.06, -112.15]]
+      },
+      {
+        "name": "Tonto Group",
+        "color": "#608050",
+        "description": "Cambrian Tapeats, Bright Angel, Muav. Forms the broad Tonto Platform.",
+        "bounds": [[36.06, -112.14], [36.06, -112.08], [36.10, -112.13], [36.11, -112.12]]
+      },
+      {
+        "name": "Vishnu Basement Rocks",
+        "color": "#3a3a3a",
+        "description": "Early Proterozoic metamorphic and igneous rocks (schists and granites).",
+        "bounds": [[36.09, -112.12], [36.09, -112.09], [36.11, -112.09], [36.11, -112.12]]
+      }
+    ],
+    "structures": [
+      {
+        "name": "Bright Angel Fault",
+        "type": "Normal Fault",
+        "coords": [[36.05, -112.15], [36.15, -112.08]]
+      },
+      {
+        "name": "Cremation Fault",
+        "type": "Normal Fault",
+        "coords": [[36.05, -112.10], [36.12, -112.06]]
+      },
+      {
+        "name": "Phantom Fault",
+        "type": "Normal Fault",
+        "coords": [[36.10, -112.09], [36.14, -112.07]]
+      }
+    ],
+    "pois": [
+      { "type": "fossil", "lat": 36.058, "lon": -112.135, "name": "Bryozoan Fossils (Kaibab)" },
+      { "type": "rock", "lat": 36.100, "lon": -112.095, "name": "Vishnu Schist Outcrop (Phantom Ranch)" },
+      { "type": "drill", "lat": 36.082, "lon": -112.122, "name": "Indian Garden Drill Core Section" },
+      { "type": "water", "lat": 36.098, "lon": -112.143, "name": "Hermit Creek Water Sample" },
+      { "type": "fossil", "lat": 36.071, "lon": -112.109, "name": "Brachiopod Trace Fossils (Redwall)" },
+      { "type": "rock", "lat": 36.085, "lon": -112.101, "name": "Tapeats Sandstone Base" },
+      { "type": "drill", "lat": 36.052, "lon": -112.140, "name": "South Rim Test Drill (Kaibab/Toroweap)" }
+    ],
+    "landmarks": [
+      { "lat": 36.054, "lon": -112.140, "name": "Grand Canyon Village" },
+      { "lat": 36.062, "lon": -112.107, "name": "Mather Point" },
+      { "lat": 36.098, "lon": -112.095, "name": "Phantom Ranch" },
+      { "lat": 36.083, "lon": -112.122, "name": "Havasupai Gardens" }
+    ]
+  },
+  "figures": {
+    "crossSection": {
+      "title": "Bright Angel Trail — Rim to River Profile (USGS Data)",
+      "data": [
+        [0, 2134, "Kaibab Limestone"], [300, 2100, "Kaibab Limestone"], [600, 2050, "Toroweap Formation"], [900, 1950, "Coconino Sandstone"],
+        [1200, 1830, "Coconino Sandstone"], [1500, 1800, "Hermit Formation"], [1800, 1680, "Esplanade Sandstone"], [2100, 1580, "Wescogame Fm."],
+        [2400, 1500, "Manakacha Fm."], [2700, 1420, "Watahomigi Fm."], [3000, 1280, "Redwall Limestone"], [3300, 1130, "Redwall Limestone"],
+        [3600, 1100, "Temple Butte Fm."], [3900, 1050, "Muav Limestone"], [4200, 1000, "Muav Limestone"], [4500, 970, "Bright Angel Shale"],
+        [4800, 960, "Bright Angel Shale"], [5100, 950, "Bright Angel Shale"], [5400, 920, "Tapeats Sandstone"], [5700, 850, "Vishnu Schist"],
+        [6000, 790, "Vishnu Schist"], [6300, 760, "Vishnu Schist"], [6600, 740, "Vishnu Schist"], [6900, 730, "Vishnu Schist"], [7200, 725, "Colorado River"]
+      ],
+      "riverLevel": 725
+    },
+    "mineralComposition": {
+      "title": "Kaibab Limestone — Mineral Composition (McKee 1938)",
+      "labels": ["Calcite (CaCO₃)", "Dolomite (CaMg(CO₃)₂)", "Chert (SiO₂)", "Quartz sand", "Clay minerals", "Fossil fragments"],
+      "data": [45, 25, 12, 8, 5, 5],
+      "colors": ["#3b82f6", "#8b5cf6", "#f59e0b", "#10b981", "#06b6d4", "#64748b"]
+    },
+    "formationThicknesses": {
+      "title": "Formation Thicknesses — USGS Measured Sections (m)",
+      "formations": ["Kaibab Limestone", "Toroweap Formation", "Coconino Sandstone", "Hermit Formation", "Esplanade Sandstone", "Wescogame Fm.", "Manakacha Fm.", "Watahomigi Fm.", "Redwall Limestone", "Temple Butte Fm.", "Muav Limestone", "Bright Angel Shale", "Tapeats Sandstone"],
+      "thicknesses": [100, 75, 110, 30, 90, 55, 60, 55, 155, 30, 135, 100, 30],
+      "colors": ["rgba(212,205,184,0.85)", "rgba(200,184,152,0.85)", "rgba(240,224,192,0.85)", "rgba(192,112,80,0.85)", "rgba(208,128,96,0.85)", "rgba(176,112,80,0.85)", "rgba(192,136,104,0.85)", "rgba(160,120,88,0.85)", "rgba(160,160,176,0.85)", "rgba(138,122,106,0.85)", "rgba(144,160,144,0.85)", "rgba(96,128,80,0.85)", "rgba(138,106,74,0.85)"]
+    },
+    "formationAges": {
+      "title": "Formation Ages — 1.75 Billion Years of Earth History",
+      "formations": ["Kaibab", "Toroweap", "Coconino", "Hermit", "Supai Group", "Redwall", "Temple Butte", "Muav", "Bright Angel", "Tapeats", "Vishnu"],
+      "agesMa": [270, 273, 275, 280, 300, 340, 385, 505, 510, 508, 1750],
+      "colors": ["rgba(212,205,184,0.8)", "rgba(200,184,152,0.8)", "rgba(240,224,192,0.8)", "rgba(192,112,80,0.8)", "rgba(192,120,80,0.8)", "rgba(160,160,176,0.8)", "rgba(138,122,106,0.8)", "rgba(144,160,144,0.8)", "rgba(96,128,80,0.8)", "rgba(138,106,74,0.8)", "rgba(58,58,58,0.8)"]
+    }
+  }
+}
