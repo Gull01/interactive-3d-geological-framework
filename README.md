@@ -1,17 +1,17 @@
-# ⛰️ Interactive 3D Geological Framework
+# Interactive 3D Geological Framework
 
-## 🚀 Overview
+## Overview
 Open-source web application framework for rendering interactive 3D geological data, boreholes, and maps.
 
-## ✨ Key Features
+## Key Features
 - **3D Rendering**: Open-source framework for volumetric soil/rock data visualization.
 - **Borehole Logging**: Displays underground stratigraphy interactively.
 - **Web-First Integration**: Highly scalable rendering engine for spatial geological info.
 
-## 🛠️ Built With
+## Built With
 - **Tech Stack:** JavaScript, Three.js, WebGL
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 Ensure your local environment is configured securely (e.g. Python 3.8+ or necessary GIS software context).
@@ -27,7 +27,7 @@ Ensure your local environment is configured securely (e.g. Python 3.8+ or necess
    ```
 3. Set up your environment and dependencies as needed.
 
-## 📄 License
+## License
 This project is licensed under the MIT License - see below for details.
 
 ```text
