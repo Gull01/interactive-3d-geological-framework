@@ -20,9 +20,6 @@ function initMap() {
   });
 
   // Basemaps
-  const dark = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-    attribution: '&copy; OSM &copy; CARTO', maxZoom: 19,
-  });
   const light = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; OpenStreetMap', maxZoom: 19,
   });
@@ -33,7 +30,7 @@ function initMap() {
     attribution: '&copy; OpenTopoMap', maxZoom: 17,
   });
 
-  dark.addTo(geoMap);
+  light.addTo(geoMap);
 
   // Geological units
   const geoLayer = L.layerGroup();
@@ -92,7 +89,7 @@ function initMap() {
 
   // Layer control
   L.control.layers(
-    { 'Dark': dark, 'Light': light, 'Satellite': satellite, 'Topo': topo },
+    { 'Light': light, 'Satellite': satellite, 'Topo': topo },
     { 'Geological Units': geoLayer, 'Faults': faultLayer, 'Samples & Fossils': pointsLayer, 'Landmarks': locLayer },
     { position: 'topright', collapsed: false }
   ).addTo(geoMap);
