@@ -26,7 +26,7 @@
     if (sub) sub.textContent = meta.subtitle;
 
     const tTitle = document.querySelector('#panel-terrain .panel-title');
-    if (tTitle) tTitle.textContent = `3D Terrain — ${meta.region}`;
+    if (tTitle) tTitle.textContent = `3D Terrain ${meta.region}`;
 
     const dhSub = document.querySelector('#panel-drillhole .panel-subtitle');
     if (dhSub) dhSub.innerHTML = `${meta.region} Stratigraphy<br>${meta.source}`;
